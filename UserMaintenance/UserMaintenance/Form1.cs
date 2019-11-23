@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,9 +18,9 @@ namespace UserMaintenance
         public Form1()
         {
             InitializeComponent();
-            lblFirstName.Text = Resource1.FirstName;
-            lblLastName.Text = Resource1.LastName;
+            lblLastName.Text = Resource1.FullName;
             btnAdd.Text = Resource1.Add;
+            btnWrite.Text = Resource1.Write;
 
             listBox1.DataSource = users;
             listBox1.ValueMember = "ID";
@@ -30,10 +31,33 @@ namespace UserMaintenance
         private void btnAdd_Click(object sender, EventArgs e)
         {
             var u = new User();
-            u.FirstName = tbxFirstName.Text;
-            u.LastName = tbxLastName.Text;
+            u.FullName = tbxFullName.Text;
             users.Add(u);
 
+        }
+
+        private void btnWrite_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog sfd = new SaveFileDialog();
+            sfd.InitialDirectory = Application.StartupPath;
+            sfd.Filter = "Comma Seperated Values (*.csv)|*.csv";
+            sfd.DefaultExt = "csv";
+            sfd.AddExtension = true;
+            if (sfd.ShowDialog() !=DialogResult.OK)
+            {
+                return;
+            }
+
+            using (StreamWriter sw = new StreamWriter(sfd.FileName, false, Encoding.UTF8))
+            {
+                foreach (var item in users)
+                {
+                    sw.Write(item.ID);
+                    sw.Write(";");
+                    sw.Write(item.FullName);
+                    sw.WriteLine();
+                }
+            }
         }
     }
 }
