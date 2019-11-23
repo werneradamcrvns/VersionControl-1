@@ -32,6 +32,7 @@
             this.lblLastName = new System.Windows.Forms.Label();
             this.tbxFullName = new System.Windows.Forms.TextBox();
             this.btnAdd = new System.Windows.Forms.Button();
+            this.btnWrite = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // listBox1
@@ -63,17 +64,28 @@
             // 
             this.btnAdd.Location = new System.Drawing.Point(378, 66);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(397, 43);
+            this.btnAdd.Size = new System.Drawing.Size(170, 43);
             this.btnAdd.TabIndex = 5;
             this.btnAdd.Text = "button1";
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
+            // btnWrite
+            // 
+            this.btnWrite.Location = new System.Drawing.Point(605, 66);
+            this.btnWrite.Name = "btnWrite";
+            this.btnWrite.Size = new System.Drawing.Size(170, 43);
+            this.btnWrite.TabIndex = 6;
+            this.btnWrite.Text = "button1";
+            this.btnWrite.UseVisualStyleBackColor = true;
+            this.btnWrite.Click += new System.EventHandler(this.btnWrite_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnWrite);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.tbxFullName);
             this.Controls.Add(this.lblLastName);
@@ -91,6 +103,7 @@
         private System.Windows.Forms.Label lblLastName;
         private System.Windows.Forms.TextBox tbxFullName;
         private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.Button btnWrite;
     }
 }
 
