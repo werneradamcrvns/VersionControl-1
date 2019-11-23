@@ -30,9 +30,7 @@
         {
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.lblLastName = new System.Windows.Forms.Label();
-            this.lblFirstName = new System.Windows.Forms.Label();
-            this.tbxLastName = new System.Windows.Forms.TextBox();
-            this.tbxFirstName = new System.Windows.Forms.TextBox();
+            this.tbxFullName = new System.Windows.Forms.TextBox();
             this.btnAdd = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -54,32 +52,16 @@
             this.lblLastName.TabIndex = 1;
             this.lblLastName.Text = "label1";
             // 
-            // lblFirstName
+            // tbxFullName
             // 
-            this.lblFirstName.AutoSize = true;
-            this.lblFirstName.Location = new System.Drawing.Point(374, 79);
-            this.lblFirstName.Name = "lblFirstName";
-            this.lblFirstName.Size = new System.Drawing.Size(51, 20);
-            this.lblFirstName.TabIndex = 2;
-            this.lblFirstName.Text = "label2";
-            // 
-            // tbxLastName
-            // 
-            this.tbxLastName.Location = new System.Drawing.Point(474, 21);
-            this.tbxLastName.Name = "tbxLastName";
-            this.tbxLastName.Size = new System.Drawing.Size(301, 26);
-            this.tbxLastName.TabIndex = 3;
-            // 
-            // tbxFirstName
-            // 
-            this.tbxFirstName.Location = new System.Drawing.Point(474, 73);
-            this.tbxFirstName.Name = "tbxFirstName";
-            this.tbxFirstName.Size = new System.Drawing.Size(301, 26);
-            this.tbxFirstName.TabIndex = 4;
+            this.tbxFullName.Location = new System.Drawing.Point(474, 21);
+            this.tbxFullName.Name = "tbxFullName";
+            this.tbxFullName.Size = new System.Drawing.Size(301, 26);
+            this.tbxFullName.TabIndex = 3;
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(378, 124);
+            this.btnAdd.Location = new System.Drawing.Point(378, 66);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(397, 43);
             this.btnAdd.TabIndex = 5;
@@ -93,9 +75,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.btnAdd);
-            this.Controls.Add(this.tbxFirstName);
-            this.Controls.Add(this.tbxLastName);
-            this.Controls.Add(this.lblFirstName);
+            this.Controls.Add(this.tbxFullName);
             this.Controls.Add(this.lblLastName);
             this.Controls.Add(this.listBox1);
             this.Name = "Form1";
@@ -109,9 +89,7 @@
 
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.Label lblLastName;
-        private System.Windows.Forms.Label lblFirstName;
-        private System.Windows.Forms.TextBox tbxLastName;
-        private System.Windows.Forms.TextBox tbxFirstName;
+        private System.Windows.Forms.TextBox tbxFullName;
         private System.Windows.Forms.Button btnAdd;
     }
 }
