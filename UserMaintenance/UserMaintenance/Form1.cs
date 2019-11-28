@@ -21,11 +21,17 @@ namespace UserMaintenance
             lblLastName.Text = Resource1.FullName;
             btnAdd.Text = Resource1.Add;
             btnWrite.Text = Resource1.Write;
+            btnDelete.Text = Resource1.Delete;
 
+            Listázás();
+
+        }
+
+        private void Listázás()
+        {
             listBox1.DataSource = users;
             listBox1.ValueMember = "ID";
             listBox1.DisplayMember = "FullName";
-
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -58,6 +64,15 @@ namespace UserMaintenance
                     sw.WriteLine();
                 }
             }
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if (listBox1.SelectedIndex == null) return;
+            User törlendő = (User)listBox1.SelectedItem;
+            users.Remove(törlendő);
+            Listázás();
+
         }
     }
 }
